@@ -1,0 +1,12 @@
+<input type="text" [(ngModel)]="fruit">
+<button type="button" [disabled]="fruit == '' || fruit == null" (click)="addFruit()">Add Fruit</button>
+
+<div *ngIf="fruits.length">
+  <h2>lista das suas frutas</h2>
+  <ul>
+    <li *ngFor="let f of fruits; let position = index">
+      {{ f }} -
+      <button type="button" (click)="removeFruit(position)">Remover</button>
+    </li>
+  </ul>
+</div>
